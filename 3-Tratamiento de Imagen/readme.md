@@ -31,7 +31,7 @@
     			exit()
     	pygame.display.update()
 
-<img src="Img_0.png">
+<img src="Img_0.PNG">
 
 
     import pygame
@@ -62,7 +62,7 @@
     			exit()
     	pygame.display.update()
 
-<img src="Img_1.png">
+<img src="Img_1.PNG">
 
 
     import pygame
@@ -93,7 +93,7 @@
     			exit()
     	pygame.display.update()
 
-<img src="Img_2.png">
+<img src="Img_2.PNG">
 
 
     import pygame
@@ -129,7 +129,7 @@
     			exit()
     	pygame.display.update()
 
-<img src="Img_3.png">
+<img src="Img_3.PNG">
 
 
     import pygame
@@ -165,7 +165,7 @@
     			exit()
     	pygame.display.update()
 
-<img src="Img_4.png">
+<img src="Img_4.PNG">
 
 
     import pygame
@@ -191,7 +191,7 @@
     			exit()
     	pygame.display.update()
 
-<img src="Img_5.png">
+<img src="Img_5.PNG">
 
 
     import pygame
@@ -232,7 +232,7 @@
     			exit()
     	pygame.display.update()
 
-<img src="Img_6.png">
+<img src="Img_6.PNG">
 
 
     import pygame
@@ -273,7 +273,7 @@
     			exit()
     	pygame.display.update()
 
-<img src="Img_7.png">
+<img src="Img_7.PNG">
 
 
     
