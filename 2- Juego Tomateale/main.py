@@ -14,6 +14,8 @@ def clscr():
 
 print("|     |")
 screen = pygame.display.set_mode((800,600))
+screen.blit(pygame.image.load("img/present.png"),(0,0))
+pygame.display.update()
 clscr()
 print("|#    |")
 timer = pygame.time.Clock()
@@ -29,6 +31,17 @@ mano = hand()
 clscr()
 print("|#####|")
 tomates = []
+t = 0
+
+
+while (t<100):
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			exit()
+	pygame.display.update()
+	timer.tick(20)
+	t+=1
+
 t = 0
 
 def disparo():
