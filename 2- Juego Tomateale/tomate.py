@@ -17,6 +17,7 @@ class tomatoe:
 		self.estado = 0
 		self.img = pygame.transform.scale(self.imgIni,self.tamIni)
 		self.img_mancha = pygame.transform.scale(pygame.image.load("img/mancha.png").convert_alpha(),self.tamFin)
+		self.timer = 0
 
 	def getPos(self):
 		return self.pos
@@ -41,6 +42,7 @@ class tomatoe:
 		self.tamFin = tam
 
 	def crearTomate(self):
+		self.timer = 0
 		self.tomate = 0
 		self.img = pygame.transform.scale(self.imgIni,self.tamIni)
 		self.v = [(self.posIni[0]-self.posFin[0])/self.tiempo,(self.posIni[1]-self.posFin[1])/self.tiempo,
@@ -53,5 +55,11 @@ class tomatoe:
 			self.pos = [self.pos[0]-self.v[0],self.pos[1]+self.v[1]]
 			self.tam = [self.tam[0]-self.v[2],self.tam[1]-self.v[3]]
 			self.img = pygame.transform.scale(self.imgIni,[int(self.tam[0]),int(self.tam[1])])
+			return False
 		else:
+			self.timer += 1
 			self.img = self.img_mancha
+			if (self.timer>20):
+				return True
+			else:
+				return False

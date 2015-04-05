@@ -15,7 +15,10 @@ class rectangulo:
 		self.img = pygame.transform.scale(imagen,self.tam)
 		self.superficie.blit(self.img,(0,0))
 		self.t = 0
+		self.t_2 = 0
 		self.estado = [0,0]
+		self.vida = 100
+		self.anterior = 0
 
 	def draw(self,surf):
 		surf.blit(self.superficie,self.pos)
@@ -34,7 +37,13 @@ class rectangulo:
 		if (pos[0]+tam[0]<self.pos[0] or pos[0]>self.pos[0]+self.tam[0] or pos[1]>self.pos[1]+self.tam[1] or pos[1]+tam[1]<self.pos[1]):
 			return False
 		else:
-			return True
+			if (self.t_2 - self.anterior > 25):
+				self.anterior = self.t_2
+				self.vida -= 5
+				print self.vida
+				return True
+			else:
+				return False
 
 	def toCentro(self):
 		#print "A centro"
@@ -61,6 +70,7 @@ class rectangulo:
 			self.move([self.estado[1],0])
 
 	def actualizar(self):
+		self.t_2 += 1
 		self.t += 1
 		estado = self.estado[0]
 		if (estado == 1):
@@ -69,7 +79,7 @@ class rectangulo:
 			self.toIzq()
 		elif (estado == 3):
 			self.toDer()
-		if self.t > 20:
+		if self.t > 5:
 			self.randomState()
 			self.t = 0
 
@@ -98,6 +108,9 @@ class rectangulo:
 		self.estado = estado_array
 
 	def randomState(self):
-		estado = int(random.randrange(100))
+		estado = int(random.randrange(10))
 		if (estado <4):
 			self.setEstado(estado)
+
+	def getVida(self):
+		return self.vida

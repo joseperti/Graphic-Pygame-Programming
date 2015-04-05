@@ -8,11 +8,26 @@ from rectangulo import *
 from mano import *
 from tomate import *
 
+def clscr():
+
+	print("\n\n\n\n\n\n\n")
+
+print("|     |")
 screen = pygame.display.set_mode((800,600))
+clscr()
+print("|#    |")
 timer = pygame.time.Clock()
+clscr()
+print("|##   |")
 background = fondo()
+clscr()
+print("|###  |")
 actor = rectangulo()
+clscr()
+print("|#### |")
 mano = hand()
+clscr()
+print("|#####|")
 tomates = []
 t = 0
 
@@ -43,7 +58,11 @@ while True:
 	background.draw_front(screen)
 	for tomate in tomates:
 		tomate.draw(screen)
-		tomate.actualizar()
+		if (actor.choque(tomate.getPos(),tomate.getTam())):
+			vida = actor.getVida()
+			background.actualizarVida(vida)
+		if (tomate.actualizar()):
+			tomates.remove(tomate)
 	mano.draw(screen)
 	timer.tick(28)
 	pygame.display.update()
