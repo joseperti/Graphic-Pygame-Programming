@@ -14,7 +14,6 @@ def clscr():
 
 print("|     |")
 screen = pygame.display.set_mode((800,600))
-screen.blit(pygame.image.load("img/present.png"),(0,0))
 pygame.display.update()
 clscr()
 print("|#    |")
